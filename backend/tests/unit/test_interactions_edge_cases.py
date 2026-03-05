@@ -16,12 +16,12 @@ def test_filter_no_matches_returns_empty_list() -> None:
 
 
 def test_filter_multiple_matches_returns_all_matching() -> None:
-    """Test filtering returns all interactions with matching learner_id."""
+    """Test filtering returns all interactions with matching item_id."""
     interactions = [
-        _make_log(1, 1, 10),
-        _make_log(2, 2, 20),
-        _make_log(3, 1, 30),
-        _make_log(4, 3, 40),
+        _make_log(1, 1, 1),
+        _make_log(2, 2, 2),
+        _make_log(3, 1, 1),
+        _make_log(4, 3, 4),
     ]
     result = _filter_by_item_id(interactions, 1)
     assert len(result) == 2
